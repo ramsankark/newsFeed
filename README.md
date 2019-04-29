@@ -1,3 +1,52 @@
+News Feed
+=========
+
+News feed application will load top headlines news from google news API. Only top 5 news information are displayed here and on clicking the view more button on the News Feed bottom, next 5 feeds will be displayed. Full story pane will display the brief story of the news from news feed pane click.
+
+About news feed
+    -> In news feed, async google API call is handled using redux thunk.
+    -> LoremIpsum is a stateless component used to display static context to fill news brief.
+    -> Loading and Pagination are handled from 'NEWS_FEED' action payload.
+
+
+Components
+==========
+
+1. App.js           - App component is the initial component which will include two components Feed and FeedDetails
+
+2. Feed.js          - Feed component will load the top 5 google news API, this will be the left side pane which highlights the news and is clickable. Component is customized to show Image, news title and news description. It also includes pagination to load next 5 stories.
+
+3. FeedDetails.js   - FeedDetails component will be empty initially, when the user click on any news feed from Feed component the brief details of the news will be displayed in this right side pane. When user clicks on view more button the Id param will be set -1 to display no value.
+
+4. LoremIpsum.js    - LoremIpsum is a stateless component I have used here. Since google news API i'm using here is a developer version the news details will not be displayed fully, so i have placed lorem ipsum context to get a news detail look.
+
+
+Actions
+=======
+
+fetchNewsFeed       - This method will access the google news API and get top 5 news information. pageNumber param will                         be initially send as 1. It will return the 'NEWS_FEED' action to getNewsFeed action.
+
+getNewsFeed         - Method will get the news feed information from fetchNewsFeed method
+
+displayLoading      - This method will enable and disable the loading icon while loading news feed
+
+getMoreNewsDetails  - id param will pass the news feed id based on which news feed details will be obtained and displayed.
+
+
+Reducers
+========
+
+newsFeedReducers.js
+    - newsFeedReducer will return the news feeds, page number and loading values to the store
+    - newsDetailReducer will return news feed details to the store
+
+
+
+
+
+
+##################################################################################################################
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
