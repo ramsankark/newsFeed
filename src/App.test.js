@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+import App from './App';
 import Feed from './Components/Feed';
+import FeedDetails from './Components/FeedDetails';
 
 /*
 it('renders without crashing', () => {
@@ -14,9 +17,18 @@ it('renders without crashing', () => {
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('<App/>', () => {
+describe('tests App component', () => {
+  const wrapper = shallow(<App />)
+
+  it('renders Google logo', () => {
+    expect(wrapper.find("[data-test='google-logo']").length).toEqual(1);
+  });
+
   it('renders Feed component', () => {
-    const wrapper = shallow(<App />)
-    expect(wrapper.find(Feed)).to.have.lengthOf(1);
+    expect(wrapper.find(Feed)).toHaveLength(1);
+  });
+  
+  it('renders FeedDetails component', () => {
+    expect(wrapper.find(FeedDetails)).toHaveLength(1);
   });
 })

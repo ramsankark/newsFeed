@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="news-ribbon">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" data-test='google-logo' />
           <h2>Google News</h2>
         </div>
         <div className="news-container">

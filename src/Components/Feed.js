@@ -17,14 +17,14 @@ class Feed extends Component{
             <h4>News Feed</h4>
             <div className="content">
                 <div className="loading">
-                    { this.props.loading && <Fragment><img src={loadIcon} className={"App-logo"} alt={"Loading"}/><br/><span>Loading</span></Fragment> }
+                    { this.props.loading && <Fragment><img src={loadIcon} className={"App-logo"} alt={"Loading"} data-test="loading"/><br/><span>Loading</span></Fragment> }
                 </div>
                 <ul>
                     {
                         Object.values(this.props.newsFeed).map((feed,index) => {
                             if(typeof(feed) === 'object'){
                                 return (<li key={index}>
-                                    <div className="news-content" onClick={() => this.props.moreNewsDetail(index)}>
+                                    <div className="news-content" data-test={"newsfeed-"+index} onClick={() => this.props.moreNewsDetail(index)}>
                                         <img src={feed.urlToImage!=null ? feed.urlToImage : noImage} alt="News Feed" />
                                         <div className="news-info">
                                             <h5>{feed.title}</h5>
