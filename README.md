@@ -8,6 +8,10 @@ About news feed
     -> LoremIpsum is a stateless component used to display static context to fill news brief.
     -> Loading and Pagination are handled from 'NEWS_FEED' action payload.
 
+Library files included:
+----------------------
+React, Redux, Redux-Thunk, Enzyme
+
 
 Components
 ==========
