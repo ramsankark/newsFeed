@@ -41,8 +41,8 @@ Reducers
 ========
 
 newsFeedReducers.js
-    - newsFeedReducer will return the news feeds, page number and loading values to the store
-    - newsDetailReducer will return news feed details to the store
+* newsFeedReducer will return the news feeds, page number and loading values to the store
+* newsDetailReducer will return news feed details to the store
 
 
 
